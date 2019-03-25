@@ -1,5 +1,9 @@
 package com.Spring.Tut7InjectingObjects;
 
+/**
+ * @author Gaurav Sharma
+ *
+ */
 public class Triangle {
 
 	private Point pointA;

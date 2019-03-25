@@ -3,6 +3,10 @@ package com.Spring.Tut18RequiredAnnotation;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor;
 
+/**
+ * @author Gaurav Sharma
+ *
+ */
 public class Circle implements Shape {
 
 	private Point center;

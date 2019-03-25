@@ -9,6 +9,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.FileSystemResource;
 
+/**
+ * @author Gaurav Sharma
+ *
+ */
 public class DrawingAppTut7 {
 
 	/**

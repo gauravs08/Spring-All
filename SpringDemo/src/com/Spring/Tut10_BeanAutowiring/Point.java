@@ -1,5 +1,9 @@
 package com.Spring.Tut10_BeanAutowiring;
 
+/**
+ * @author Gaurav Sharma
+ *
+ */
 public class Point {
 
 	private int x;

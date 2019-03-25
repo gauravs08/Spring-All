@@ -8,6 +8,10 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/**
+ * @author Gaurav Sharma
+ *
+ */
 public class DrawingApp {
 
 	/**

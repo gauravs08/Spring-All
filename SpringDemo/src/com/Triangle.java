@@ -1,5 +1,10 @@
 package com;
 
+
+/**
+ * @author Gaurav Sharma
+ *
+ */
 public class Triangle {
 
 	public Triangle(int height) {

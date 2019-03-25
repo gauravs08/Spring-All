@@ -3,6 +3,10 @@ package com.Spring.Tut15BeanPostProcessor;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
+/**
+ * @author Gaurav Sharma
+ *
+ */
 public class Triangle { 
 //implements InitializingBean,DisposableBean {
 //InitializingBean - afterpropertieSet() : for performing operation that are required to do after Initilization of bean obj.

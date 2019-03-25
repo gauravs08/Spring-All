@@ -1,5 +1,9 @@
 package com.Spring.Tut11AppContextAware;
 
+/**
+ * @author Gaurav Sharma
+ *
+ */
 public class Point {
 
 	private int x;

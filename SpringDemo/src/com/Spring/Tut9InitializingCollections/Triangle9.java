@@ -2,6 +2,10 @@ package com.Spring.Tut9InitializingCollections;
 
 import java.util.List;
 
+/**
+ * @author Gaurav Sharma
+ *
+ */
 public class Triangle9 {
 
 	/*private Point pointA;

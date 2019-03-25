@@ -1,5 +1,9 @@
 package com.Spring.Tut13BeanDefinationInheritence;
 
+/**
+ * @author Gaurav Sharma
+ *
+ */
 public class Point {
 
 	private int x;

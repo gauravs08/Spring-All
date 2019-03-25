@@ -1,5 +1,9 @@
 package com.Spring.Tut18RequiredAnnotation;
 
+/**
+ * @author Gaurav Sharma
+ *
+ */
 public class Triangle implements Shape{
 
 	private Point pointA;

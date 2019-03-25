@@ -2,6 +2,10 @@ package com.Spring.Tut13BeanDefinationInheritence;
 
 import java.util.List;
 
+/**
+ * @author Gaurav Sharma
+ *
+ */
 public class TriangleList {
 
 	private List<Point> points ; 

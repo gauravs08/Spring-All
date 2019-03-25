@@ -6,6 +6,10 @@ package com.Spring.Tut21_Component_Service_Repository_StereotypeAnnotation;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/**
+ * @author Gaurav Sharma
+ *
+ */
 public class DrawingApp {
 
 	/**

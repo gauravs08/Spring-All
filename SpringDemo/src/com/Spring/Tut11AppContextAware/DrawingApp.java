@@ -6,6 +6,10 @@ package com.Spring.Tut11AppContextAware;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/**
+ * @author Gaurav Sharma
+ *
+ */
 public class DrawingApp {
 
 	/**

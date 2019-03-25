@@ -1,5 +1,9 @@
 package com.Spring.Tut15BeanPostProcessor;
 
+/**
+ * @author Gaurav Sharma
+ *
+ */
 public class Point {
 
 	private int x;
