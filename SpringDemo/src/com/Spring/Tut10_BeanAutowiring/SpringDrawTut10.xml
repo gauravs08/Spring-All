@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="triangle" class="com.Spring.Tut10_BeanAutowiring.Triangle" name="triangle-name" autowire="byName">
+		
+		
+		<!--INFO::
+		autowire="byName" it allows to bind the "triangle" datatypes with the bean which are present in the spring and initiate the setter()
+		autowire="bytype" it allows smilar binding but here each obj shud have diff type ,else it will not work,since here we have all obj of point obj so it will not wrk here.
+		autowire="constructor" similar binding for constructor of triangle
+		ref:  ask spring to find the reference id in xml and that obj is assigned with the reference properties
+				eg. above pointA is assigned x=0,y=0 as value
+				we can have multi levelled reference means in ref we can have another reference like inheritance
+		alias: 2 ways to give aliasing 
+				1) itself in bean tag name="other name"
+				2) separate tag <alias name="triangle" alias="triangle-alias"/>
+		
+		idref: Since aliasing can happen anywhere so to ristrict ref tag to use only id to find reference 
+				we use 
+				<property name="pointA" > 
+					<idref ="zeropoint"/>
+				</property>
+		Inner Bean: when we are sure enough that we are not using particular bean outside
+					 and are only used in one place. then it is prefered to use inner bean .
+					this is anti-referencing
+					as there is no ref/idref and no id required for inner bean
+		<property name="pointC">
+			<bean  class="com.Spring.Tut7InjectingObjects.Point">
+				<property name="x" value ="-20"/>
+				<property name="y" value ="0"/>
+			</bean>
+		</property>
+					 
+		   -->
+	</bean>
+	<alias name="triangle" alias="triangle-alias"/>
+	
+	<bean id="pointA" class="com.Spring.Tut10_BeanAutowiring.Point">
+		<property name="x" value ="0"/>
+		<property name="y" value ="0"/>
+	</bean>
+	<bean id="pointB" class="com.Spring.Tut10_BeanAutowiring.Point">
+		<property name="x" value ="-20"/>
+		<property name="y" value ="0"/>
+	</bean>
+	<bean id="pointC" class="com.Spring.Tut10_BeanAutowiring.Point">
+		<property name="x" value ="0"/>
+		<property name="y" value ="20"/>
+	</bean>
+</beans>
+

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd"> -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:context="http://www.springframework.org/schema/context"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans 
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd">
+         
+<!-- 	<bean id="triangle" class="com.Spring.Tut22_MessageSource_PropertyFile.Triangle" name="triangle-name">
+		<property name="pointA" ref="zeropoint"/>
+		<property name="pointB" ref="point2"/>
+		<property name="pointC">
+			<bean  class="com.Spring.Tut22_MessageSource_PropertyFile.Point">
+				<property name="x" value ="-20"/>
+				<property name="y" value ="0"/>
+			</bean>
+		</property>
+		
+		INFO::
+		ref:  ask spring to find the reference id in xml and that obj is assigned with the reference properties
+				eg. above pointA is assigned x=0,y=0 as value
+				we can have multi levelled reference means in ref we can have another reference like inheritance
+		alias: 2 ways to give aliasing 
+				1) itself in bean tag name="other name"
+				2) separate tag <alias name="triangle" alias="triangle-alias"/>
+		
+		idref: Since aliasing can happen anywhere so to ristrict ref tag to use only id to find reference 
+				we use 
+				<property name="pointA" > 
+					<idref ="zeropoint"/>
+				</property>
+		Inner Bean: when we are sure enough that we are not using particular bean outside
+					 and are only used in one place. then it is prefered to use inner bean .
+					this is anti-referencing
+					as there is no ref/idref and no id required for inner bean
+		<property name="pointC">
+			<bean  class="com.Spring.Tut22_MessageSource_PropertyFile.Point">
+				<property name="x" value ="-20"/>
+				<property name="y" value ="0"/>
+			</bean>
+		</property>
+					 
+		  
+	</bean>
+	<alias name="triangle" alias="triangle-alias"/> -->
+	
+	<bean id="zeropoint" class="com.Spring.Tut22_MessageSource_PropertyFile.Point">
+		<qualifier value ="circleRelated"/>
+		<property name="x" value ="0"/>
+		<property name="y" value ="0"/>
+	</bean>
+	<bean id="point2" class="com.Spring.Tut22_MessageSource_PropertyFile.Point"> 
+		<property name="x" value ="-20"/>
+		<property name="y" value ="0"/>
+	</bean>
+	<bean id="point3" class="com.Spring.Tut22_MessageSource_PropertyFile.Point">
+		<property name="x" value ="0"/>
+		<property name="y" value ="20"/>
+	</bean>
+	<bean id="pointC" class="com.Spring.Tut22_MessageSource_PropertyFile.Point">
+		<property name="x" value ="20"/>
+		<property name="y" value ="20"/>
+	</bean>
+	<bean id="center" class="com.Spring.Tut22_MessageSource_PropertyFile.Point">
+		<property name="x" value ="40"/>
+		<property name="y" value ="40"/>
+	</bean>
+	
+	<!--bean "circle" is autodetected by component level auto scan  -->
+	<!-- <bean id="circle" class="com.Spring.Tut22_MessageSource_PropertyFile.Circle">
+		Since in class circle we need a point ,means there is dependency on point obj.
+			if we remove this below statement of point2 then it will thow NullPointerException 
+			as there will be no setter value passed 
+			
+		<property name="center" ref="point2"/>
+	</bean> -->
+	<!-- <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/> -->
+	<!-- @Autowire Annotation : if there areonly one point bean to autowire it will work ,
+						but if multiple point bean are present then use <qualifier name="circleRelated"> in refering point bean 
+						and @Qualifier in circle class
+		 @Qualifier required:  -->
+		<!-- <bean class ="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+			 must include above bean xmlns,xsi,xontext,schemalocation if u r using @Qualifieres 	 -->
+		 <!-- use below to facilitate all the annotation functionality this <context:annotation-config/> is shortcut to include all annotaion -->
+		 <context:annotation-config/>
+		 
+		 <!--INtro :
+		 	@Component : all the above bean will be available but what about those which are to be autodetected means marked as @Component in case of Class Circle 
+		 				below line is required to tell the JVM to scan those class also which are marked as @Component  -->
+		 <context:component-scan base-package="com.Spring.Tut22_MessageSource_PropertyFile"/>
+	
+	<bean id ="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+			<property name="basenames">
+				<list>
+					<value>myMessages</value>
+				</list>
+			</property>
+	</bean>
+	
+</beans>
+

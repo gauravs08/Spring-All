@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<bean id="triangle" class="com.Triangle" scope="singleton">
+		<!-- 
+			 <property name="type" value="Equilateral" /> 
+			 <property name="height" value="20" />				 -->
+		<!--1) Using property- to set the param of the Triangle obj.-->
+		
+			<!--INFO: By this, Spring used setter() method 
+			settype("Equilateral") to set the value to id type -->
+			
+			<!--Spring Bean Scope:
+			<bean id="triangle" class="com.Triangle" scope="singleton">
+			 when application Context initialized only once bean obj are created ,
+			if .getbean("triangle") is called 5 times they are supplied with the same bean ,
+			bean are not created everytime they are called.  
+			Basic Bean Scope::
+			 a)Singleton - Only once per Spring Container (by default) / web container , a JVM can have diff web container with same xml beans
+			 b)Prototype - New Bean Created with request or reference
+			 
+			 Web-aware context Bean Scope:
+			 request - New Bean / servlet Request
+			 session - New Bean / session
+			 Global Session - New Bean /global HTTP Session(portlet context)
+			 -->
+		
+		<!--2) Using constructor -Setting type value  -->
+		
+			<constructor-arg  value="Isolate"/><!--  for "type" args -->
+			<constructor-arg  value="20"/> <!-- for "height" args[Springs convert this parameter into integer as height is of integer] --> 
+		<!-- or use
+			 <constructor-arg index ="0" value="Isolate"/>
+			 <constructor-arg index ="1" value="10"/>
+			 			or
+			 <constructor-arg type="java.lang.String" value="Isolate"/>
+			 <constructor-arg type="int"  value="30"/>			
+			 		 -->
+	</bean>
+
+</beans>
+
